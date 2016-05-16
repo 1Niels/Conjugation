@@ -6,3 +6,5 @@ Currently a pretty much pointless website, goal is to be a better than conjuguem
 - example 
 
 ``` newVerb("comer", "como", "comes", "come", "comemos", "coméis", "comen"); ```
+
+- Every Verb is stored as an object

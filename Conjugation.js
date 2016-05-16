@@ -40,18 +40,30 @@ function enterkey(e){
 newVerb("comer", "como", "comes", "come", "comemos", "coméis", "comen");
 newVerb("caminar", "camino", "caminas", "camina", "caminamos", "camináis", "caminan");
 
+
+
 var quiz = function() {
     var answer;
+	var wrong = true;
 for (i = 0; i < verbList.length; i++) {
 	for(var key in verbList[i]) {
 		if (verbList[i][key] != verbList[i].Verb) {
-		answer = prompt("Conjugate " + verbList[i].Verb + " in the " + key + " form");
+			document.getElementById("writeVerb").innerHTML = verbList[i].Verb;
+			/* sentence form 
+			document.getElementById("forma").innerHTML = "Conjugate " + verbList[i].Verb + " in the " + key + " form";
+			*/
+			document.getElementById("forma").innerHTML = key;
+
+		answer = prompt("Conjugate " + verbList[i].Verb + " in the " + key + " form"); 
+		 /* answer = document.getElementById("answer").value; */
 		if (answer === verbList[i][key]) {
-			document.getElementById("demo").innerHTML = "Good Job";
+			document.getElementById("demo").innerHTML = "Correct!";
+			wrong = false;
 		}
-		else {
-			document.getElementById("demo").innerHTML = "try again";
-		}
+		else{
+			document.getElementById("demo").innerHTML = "Wrong";
+			}
+		
 		/*
 		console.log(key);
 		console.log(verbList[i][key]);
@@ -61,3 +73,7 @@ for (i = 0; i < verbList.length; i++) {
 }
 };
 
+if ('addEventListener' in window) {
+	window.addEventListener('load', function() { document.body.className = document.body.className.replace(/\bis-loading\b/, ''); });
+	document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
+				}

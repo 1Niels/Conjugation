@@ -34,13 +34,22 @@ newVerb("comer", "como", "comes", "come", "comemos", "coméis", "comen");
 newVerb("caminar", "camino", "caminas", "camina", "caminamos", "camináis", "caminan");
 
 var quiz = function() {
-	var answer = prompt("Conjugate " + verbList[0].Verb + " in the yo form");
-	if (answer === verbList[0].Yo)
-	{
-	document.getElementById("demo").innerHTML = "Good Job";
+    var answer;
+for (i = 0; i < verbList.length; i++) {
+	for(var key in verbList[i]) {
+		if (verbList[i][key] != verbList[i].Verb) {
+		answer = prompt("Conjugate " + verbList[i].Verb + " in the " + key + " form");
+		if (answer === verbList[i][key]) {
+			document.getElementById("demo").innerHTML = "Good Job";
+		}
+		else {
+			document.getElementById("demo").innerHTML = "try again";
+		}
+		/*
+		console.log(key);
+		console.log(verbList[i][key]);
+		*/
+		}
 	}
-	else
-	{
-		document.getElementById("demo").innerHTML = "try again";
-	}
+}
 };

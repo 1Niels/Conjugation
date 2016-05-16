@@ -89,15 +89,21 @@ for (i = 0; i < verbList.length; i++) {
 			*/
 			document.getElementById("forma").innerHTML = key;
 
-		answer = prompt("Conjugate " + verbList[i].Verb + " in the " + key + " form"); 
+		
 		 /* answer = document.getElementById("answer").value; */
+		 
+		/* var answer = $('#answer').val(); */
+		var x = true;
+		while (x == true) {
+		answer = prompt("Conjugate " + verbList[i].Verb + " in the " + key + " form");
 		if (answer === verbList[i][key]) {
 			document.getElementById("demo").innerHTML = "Correct!";
-			wrong = false;
+			x = false;
 		}
 		else{
 			document.getElementById("demo").innerHTML = "Wrong";
 			}
+		}
 		
 		/*
 		console.log(key);

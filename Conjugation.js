@@ -29,6 +29,13 @@ var newVerb = function (verb, yo, tu, ud, nos, vos, uds){
 	return verb;
 };
 
+/* Checks if enter key was pressed */
+function enterkey(e){
+	if(e.keyCode === 13){
+            quiz();
+        }
+        return false;
+};
 
 newVerb("comer", "como", "comes", "come", "comemos", "coméis", "comen");
 newVerb("caminar", "camino", "caminas", "camina", "caminamos", "camináis", "caminan");
@@ -53,3 +60,4 @@ for (i = 0; i < verbList.length; i++) {
 	}
 }
 };
+

@@ -1,56 +1,69 @@
 <!DOCTYPE HTML>
 <html>
-	<head>
-		<title>Conjugation Practice</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link href='https://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-		<link rel="stylesheet" href="main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="">
-    
+<head>
+<title>Conjugation Practice</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href='https://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="main.css" />
+<noscript>
+<link rel="stylesheet" href="assets/css/noscript.css" />
+</noscript>
+</head>
+<body class="">
 
-		<!-- Wrapper -->
-			<div id="wrapper">
-
-				<!-- Main -->
-					<section id="main">
-						<header>
-                        
-							<h1 id="writeVerb">Verb</h1>
-							<p></p>                  
-                            <p class="bigP" id="forma">Pronoun</p>
-<!-- Original button to call quiz
+<!-- Wrapper -->
+<div id="wrapper"> 
+  
+  <!-- Main -->
+  <section id="main">
+    <header>
+      <h1 id="writeVerb">Verb</h1>
+      <p></p>
+      <p class="bigP" id="forma">Pronoun</p>
+      <!-- Original button to call quiz
 <button onclick="quiz()" class="button">Click here</button>
--->
+--> 
+      
+      <!-- -->
+      <form action="#">
+        <input type="text" name="txt" id="answer" onkeypress="enterkey(event)" />
+      </form>
+      <input type="button" id="myBtn" onclick="quiz()" value="start"> 
+      <!-- -->
+      
+      <p id="demo">-</p>
+    </header>
+    <footer>
 
-<!-- -->
-
-<form action="#">
-    <input type="text" name="txt" id="answer" onkeypress="enterkey(event)" />
-</form>
-
+    </footer>
+  </section>
+  
+  <!-- Footer -->
+  <footer id="footer">
+    <ul class="copyright">
+    </ul>
+  </footer>
+</div>
 <script>
-// JavaScript Document
 /* initiates verbList variable */
 var verbList = [];
 
 /* pushes verb made in newVerb to verbList */
-var addToList = function (verb){
+function addToList(verb){
 	verbList.push(verb);
 }
 
 /* prints out all verbs in verbList (does not print conjugation) */
-var logVerbs = function () {
+function logVerbs() {
 	for (i = 0; i < verbList.length; i++) {
 		console.log(verbList[i].Verb);
 	};
 }
 
 /* takes inputs to add a new Verb to verbList */
-var newVerb = function (verb, yo, tu, ud, nos, vos, uds){
+function newVerb(verb, yo, tu, ud, nos, vos, uds){
 	Verb = verb
 	verb = new Object();
 	verb["Verb"] = Verb;
@@ -76,42 +89,36 @@ newVerb("comer", "como", "comes", "come", "comemos", "coméis", "comen");
 newVerb("caminar", "camino", "caminas", "camina", "caminamos", "camináis", "caminan");
 
 
-
-var quiz = function() {
+function quiz() {
     var answer;
 	var wrong = true;
-for (i = 0; i < verbList.length; i++) {
-	for(var key in verbList[i]) {
-		if (verbList[i][key] != verbList[i].Verb) {
-			document.getElementById("writeVerb").innerHTML = verbList[i].Verb;
-			/* sentence form 
-			document.getElementById("forma").innerHTML = "Conjugate " + verbList[i].Verb + " in the " + key + " form";
-			*/
-			document.getElementById("forma").innerHTML = key;
+	for (i = 0; i < verbList.length; i++) {
+		for(var key in verbList[i]) {
+			if (verbList[i][key] != verbList[i].Verb) {
+				document.getElementById("writeVerb").innerHTML = verbList[i].Verb;
+				/* sentence form: document.getElementById("forma").innerHTML = "Conjugate " + verbList[i].Verb + " in the " + key + " form"; */
+				document.getElementById("forma").innerHTML = key;
 
-		
-		 /* answer = document.getElementById("answer").value; */
-		 
-		/* var answer = $('#answer').val(); */
-		var x = true;
-		while (x == true) {
-		answer = prompt("Conjugate " + verbList[i].Verb + " in the " + key + " form");
-		if (answer === verbList[i][key]) {
-			document.getElementById("demo").innerHTML = "Correct!";
-			x = false;
-		}
-		else{
-			document.getElementById("demo").innerHTML = "Wrong";
+			var x = true;
+			while (x == true) {
+			answer = prompt("Conjugate " + verbList[i].Verb + " in the " + key + " form");
+			answer = answer.toLowerCase();
+			if (answer === verbList[i][key]) {
+				document.getElementById("demo").innerHTML = "Correct!";
+				x = false;
+			}
+			else{
+				document.getElementById("demo").innerHTML = "Wrong";
+				}
+			}
+			
+			/*
+			console.log(key);
+			console.log(verbList[i][key]);
+			*/
 			}
 		}
-		
-		/*
-		console.log(key);
-		console.log(verbList[i][key]);
-		*/
-		}
 	}
-}
 };
 
 if ('addEventListener' in window) {
@@ -120,29 +127,5 @@ if ('addEventListener' in window) {
 				}
 
 </script>
-<!-- -->
-
-<p id="demo">-</p>
-
-						</header>
-						<footer>
-							<ul>
-                                <!-- to fix
-								<li><a href="#" class="fa-github">Github</a></li>
-								<li><a href="#" class="fa-twitter">Twitter</a></li>
-							     -->
-                            </ul>
-						</footer>
-					</section>
-
-				<!-- Footer -->
-					<footer id="footer">
-						<ul class="copyright">
-						</ul>
-					</footer>
-
-			</div>
-
-
-	</body>
+</body>
 </html>

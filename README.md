@@ -15,7 +15,8 @@ newVerb("bailar", "bailo", "bailas", "baila", "bailamos", "bailáis", "bailan");
 newVerb("borrar", "borro", "borras", "borra", "borramos", "boráis", "borran"); 
 ```
 - To add new verbs use newVerb() function:
-``` newVerb([infinitive], [I], [You], [He/She/Formal], [We], [You pl.], [You pl. polite/they m/f.])```
+
+```newVerb([infinitive],[I],[You],[He/She/Formal],[We],[You pl.],[You pl. polite/they m/f.])```
 
 - example of the infinitive "to love" in Spanish, Italian, and French
 

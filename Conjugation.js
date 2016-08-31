@@ -1,21 +1,20 @@
-// JavaScript Document
 /* initiates verbList variable */
 var verbList = [];
 
 /* pushes verb made in newVerb to verbList */
-var addToList = function (verb){
+function addToList(verb){
 	verbList.push(verb);
 }
 
 /* prints out all verbs in verbList (does not print conjugation) */
-var logVerbs = function () {
+function logVerbs() {
 	for (i = 0; i < verbList.length; i++) {
 		console.log(verbList[i].Verb);
 	};
 }
 
 /* takes inputs to add a new Verb to verbList */
-var newVerb = function (verb, yo, tu, ud, nos, vos, uds){
+function newVerb(verb, yo, tu, ud, nos, vos, uds){
 	Verb = verb
 	verb = new Object();
 	verb["Verb"] = Verb;
@@ -41,36 +40,39 @@ newVerb("comer", "como", "comes", "come", "comemos", "coméis", "comen");
 newVerb("caminar", "camino", "caminas", "camina", "caminamos", "camináis", "caminan");
 
 
-
-var quiz = function() {
+function quiz() {
     var answer;
 	var wrong = true;
-for (i = 0; i < verbList.length; i++) {
-	for(var key in verbList[i]) {
-		if (verbList[i][key] != verbList[i].Verb) {
-			document.getElementById("writeVerb").innerHTML = verbList[i].Verb;
-			/* sentence form 
-			document.getElementById("forma").innerHTML = "Conjugate " + verbList[i].Verb + " in the " + key + " form";
-			*/
-			document.getElementById("forma").innerHTML = key;
+	for (i = 0; i < verbList.length; i++) {
+		for(var key in verbList[i]) {
+			if (verbList[i][key] != verbList[i].Verb) {
+				document.getElementById("writeVerb").innerHTML = verbList[i].Verb;
+				/* sentence form: document.getElementById("forma").innerHTML = "Conjugate " + verbList[i].Verb + " in the " + key + " form"; */
+				document.getElementById("forma").innerHTML = key;
 
-		answer = prompt("Conjugate " + verbList[i].Verb + " in the " + key + " form"); 
-		 /* answer = document.getElementById("answer").value; */
-		if (answer === verbList[i][key]) {
-			document.getElementById("demo").innerHTML = "Correct!";
-			wrong = false;
-		}
-		else{
-			document.getElementById("demo").innerHTML = "Wrong";
+			var x = true;
+			while (x == true) {
+			answer = prompt("Conjugate " + verbList[i].Verb + " in the " + key + " form");
+			answer = answer.toLowerCase();
+			if (answer === verbList[i][key]) {
+				document.getElementById("demo").innerHTML = "Correct!";
+				x = false;
 			}
-		
-		/*
-		console.log(key);
-		console.log(verbList[i][key]);
-		*/
+			else{
+				document.getElementById("demo").innerHTML = "Wrong";
+				}
+			}
+			
+			/*
+			console.log(key);
+			console.log(verbList[i][key]);
+			*/
+			}
 		}
 	}
-}
+	document.getElementById("writeVerb").innerHTML = "Verb";
+	document.getElementById("forma").innerHTML = "Pronoun";
+    document.getElementById("demo").innerHTML = "Good Job!"
 };
 
 if ('addEventListener' in window) {

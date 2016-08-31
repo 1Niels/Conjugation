@@ -36,8 +36,27 @@ function enterkey(e){
         return false;
 };
 
-newVerb("comer", "como", "comes", "come", "comemos", "coméis", "comen");
+/* Add verbs Here */
+newVerb("andar","ando", "andas", "anda", "andamos", "andáis", "andan");
+newVerb("bailar", "bailo", "bailas", "baila", "bailamos", "bailáis", "bailan");
+newVerb("borrar", "borro", "borras", "borra", "borramos", "boráis", "borran");
 newVerb("caminar", "camino", "caminas", "camina", "caminamos", "camináis", "caminan");
+newVerb("cocinar", "cocino", "cocinas", "cocina", "cocinamos", "cocináis", "cocinan");
+newVerb("contestar", "contesto", "contestas", "contesta", "contestamos", "contestáis", "contestan");
+newVerb("escuchar", "escucho", "escuchas", "escucha", "escuchamos", "escucháis", "escuchan");
+newVerb("hablar", "hablo", "hablas", "habla", "hablamos", "habláis", "hablan");
+newVerb("llamar", "llamo", "llamas", "llama", "llamaos", "llamáis", "llaman");
+newVerb("practicar", "practico", "practicas", "practica", "practicamos", "practicáis", "practican");
+newVerb("jugar*", "juego", "juegas", "juega", "jugamos", "jugáis", "juegan");
+newVerb("ayudar", "ayudo", "ayudas","ayuda", "ayudamos", "ayudáis", "ayudan");
+newVerb("buscar", "busco", "buscas", "busca", "buscamos", "buscáis", "buscan");
+newVerb("cortar", "corto", "cortas", "corta", "cortamos", "cortáis", "cortan");
+newVerb("dibujar", "dijbujo", "dijbujas", "dibuja", "dibujamos", "dibujáis", "dibujan");
+newVerb("esperar", "espero", "esperas", "espera", "esperamos", "esperáis", "esperan");
+newVerb("estudiar", "estudio", "estudias", "estudia", "estudiamos", "estudiáis", "estudian");
+newVerb("lavar", "lavo", "lavas", "lava", "lavamos", "laváis", "lavan");
+newVerb("pagar", "pago", "pagas", "paga", "pagamos", "pagáis", "pagan");
+newVerb("trabajar", "trabajo", "trabajas", "trabaja", "trabajamos", "trabajáis", "trabajan");
 
 
 function quiz() {
